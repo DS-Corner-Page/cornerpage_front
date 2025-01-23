@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Title from "../components/title/Title";
-import ProjectList from "../components/projectList/ProjectList";
+import Title from "../components/title/title/Title";
+import ProjectList from "../components/project/projectList/ProjectList";
 
 export default function Project() {
   const [selectedProject, setSelectedProject] = useState("4기"); // 초기값 "4기"

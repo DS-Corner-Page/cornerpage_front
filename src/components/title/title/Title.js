@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as T from "./Title.style";
-import TreeImg from "../../assets/img/tree.svg";
-import CoconutImage from "../../assets/img/coconut.svg";
+import TreeImg from "../../../assets/img/tree.svg";
+import CoconutImage from "../../../assets/img/coconut.svg";
 import GradientBar from "../gradientBar/GradientBar";
 
 export default function Title({ title, subtitle, color }) {

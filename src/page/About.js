@@ -1,4 +1,4 @@
-import Title from "../components/title/Title";
+import Title from "../components/title/title/Title";
 
 export default function About() {
   return (
