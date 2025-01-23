@@ -1,6 +1,6 @@
 import * as S from "./SingleProject.style";
-import Node from "../../assets/img/node.svg";
-import React from "../../assets/img/react.svg";
+import Node from "../../../assets/img/node.svg";
+import React from "../../../assets/img/react.svg";
 
 export default function SingleProject({ title, img, stack }) {
   return (
