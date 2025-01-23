@@ -10,9 +10,8 @@ export default function ProjectNumber({ selectedProject, setSelectedProject }) {
   };
 
   const handleClick = (number) => {
-    setSelectedProject(number); // 선택 상태 변경
-
-    // 특정 위치로 스크롤 이동
+    // 상세 조회에서 목록 조회로 변경
+    setSelectedProject(number);
     window.scrollTo({
       top: scrollPositions[number],
       behavior: "smooth",
@@ -24,8 +23,8 @@ export default function ProjectNumber({ selectedProject, setSelectedProject }) {
       {["4기", "3기", "2기", "1기"].map((item) => (
         <P.ProjectNumberItem
           key={item}
-          isSelected={selectedProject === item} // 선택 여부 확인
-          onClick={() => handleClick(item)} // 클릭 핸들러
+          isSelected={selectedProject === item}
+          onClick={() => handleClick(item)}
         >
           {item}
         </P.ProjectNumberItem>

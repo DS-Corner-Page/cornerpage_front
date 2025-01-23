@@ -4,6 +4,7 @@ import ProjectList from "../components/project/projectList/ProjectList";
 
 export default function Project() {
   const [selectedProject, setSelectedProject] = useState("4기"); // 초기값 "4기"
+  const [selectedDetail, setSelectedDetail] = useState(null);
 
   return (
     <div>
@@ -15,6 +16,8 @@ export default function Project() {
       <ProjectList
         selectedProject={selectedProject}
         setSelectedProject={setSelectedProject}
+        selectedDetail={selectedDetail}
+        setSelectedDetail={setSelectedDetail}
       />
     </div>
   );
