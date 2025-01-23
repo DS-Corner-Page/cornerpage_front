@@ -5,5 +5,4 @@ export const ProjectListContainer = styled.div`
   margin: 100px 100px;
   position: sticky;
   top: 0;
-  overflow-y: auto;
 `;
