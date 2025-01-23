@@ -42,8 +42,10 @@ export const Title = styled.div`
 
 export const Bar = styled.img`
   width: 200px;
+  align-self: center; /* 세로 가운데 정렬 */
 `;
 
 export const ImageContainer = styled.img`
-  width: 50px;
+  width: ${({ width }) =>
+    width || "50px"}; /* props로 width 설정, 기본값 50px */
 `;
