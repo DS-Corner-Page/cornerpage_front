@@ -6,27 +6,46 @@ export const TitleContainer = styled.div`
   flex-direction: column;
   margin: 50px 40px;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0px;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 10px;
+    margin-top: 20px;
+  }
 `;
 
 export const TopContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-left: 20px;
+  align-items: center;
   transform: ${({ scrollPosition }) =>
     scrollPosition > 0
       ? `translateX(${scrollPosition * 1}px)`
       : "translateX(0)"};
   transition: transform 0.3s ease;
+  height: 100%;
 `;
 
 export const BottomContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   transform: ${({ scrollPosition }) =>
     scrollPosition > 0
       ? `translateX(-${scrollPosition * 1}px)`
       : "translateX(0)"};
   transition: transform 0.3s ease;
+  height: 100%;
 `;
 
 export const Title = styled.div`
@@ -38,14 +57,40 @@ export const Title = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    font-size: 35px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 27px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 26px;
+    height: 100%;
+  }
 `;
 
 export const Bar = styled.img`
   width: 200px;
-  align-self: center; /* 세로 가운데 정렬 */
+  align-self: center;
 `;
 
 export const ImageContainer = styled.img`
-  width: ${({ width }) =>
-    width || "50px"}; /* props로 width 설정, 기본값 50px */
+  width: 65px;
+
+  @media (max-width: 1024px) {
+    width: 50px;
+  }
+
+  @media (max-width: 768px) {
+    width: 35px;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 480px) {
+    width: 30px;
+    margin-right: 10px;
+  }
 `;

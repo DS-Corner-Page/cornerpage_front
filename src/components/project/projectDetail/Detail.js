@@ -22,6 +22,7 @@ export default function ProjectDetail({ id, setSelectedDetail }) {
     images,
     github_url,
     logo_image,
+    service_name,
   } = projectDetails;
 
   return (
@@ -29,30 +30,36 @@ export default function ProjectDetail({ id, setSelectedDetail }) {
       <D.topContainer>
         <D.GithubImage src={logo_image} />
         <D.ProjectIntroduce>
-          <D.ProjectTitle>{title}</D.ProjectTitle>
+          <D.ProjectTitle>
+            <D.HighLite>{service_name}</D.HighLite>
+
+            <D.StackContainer>
+              {tech_stack.map((stack, index) => (
+                <D.ProjectStack src={getIcon(stack)} />
+              ))}
+            </D.StackContainer>
+          </D.ProjectTitle>
           <D.Description>{introduction}</D.Description>
           <D.TeamMemberContainer>
-            {team_member.map((member, index) => (
-              <D.TeamMember key={index}>{member}</D.TeamMember>
-            ))}
+            <D.TeamName>TEAM {title}</D.TeamName>
+            <D.TeamMemberSubContainer>
+              {team_member.map((member, index) => (
+                <D.TeamMember key={index}>{member}</D.TeamMember>
+              ))}
+            </D.TeamMemberSubContainer>
           </D.TeamMemberContainer>
           {github_url && (
-            <D.GithubContainer>
-              <D.GithubLink
-                href={github_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            <D.GithubLink
+              href={github_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <D.GithubContainer>
                 <D.GithubLogo src={GithubLogo} alt="Github Logo" />
-              </D.GithubLink>
-              <div>Github Link</div>
-            </D.GithubContainer>
+                <div>Github Link</div>
+              </D.GithubContainer>
+            </D.GithubLink>
           )}
-          <D.StackContainer>
-            {tech_stack.map((stack, index) => (
-              <D.ProjectStack src={getIcon(stack)} />
-            ))}
-          </D.StackContainer>
         </D.ProjectIntroduce>
       </D.topContainer>
       <D.PresentationTitle>발표 자료</D.PresentationTitle>

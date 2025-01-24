@@ -5,11 +5,16 @@ export const ProjectNumberContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 0px 0px 20px 60px;
+  padding: 0px 0px 20px 20px;
   align-items: center;
 
   position: sticky;
   top: 20px;
+
+  @media (max-width: 1024px) {
+    padding: 0px 0px 20px 0px;
+    width: 80px;
+  }
 `;
 
 export const ProjectNumberItem = styled.div`
@@ -25,5 +30,14 @@ export const ProjectNumberItem = styled.div`
   &:hover {
     background: ${({ isSelected }) =>
       isSelected ? "linear-gradient(90deg, #FFFFFF, #FDF0C5)" : "#f0f0f0"};
+  }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 480px) {
+    width: 25px;
+    padding: 5px 20px;
   }
 `;

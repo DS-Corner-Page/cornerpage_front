@@ -35,7 +35,7 @@
     "team_member": ["신하늘", "김수빈", "유수연", "홍수연", "황성민"],
     "introduction": "꿈 일기를 기록하면 분석하여 조언을 건네는 서비스",
     "github_url": "https://github.com/DS-DreamIT",
-    "service_name": "Dreamable?",
+    "service_name": "Dreamable",
     "tech_stack": ["node", "typescript", "flask"],
     "images": [
       "https://github.com/user-attachments/assets/4f4f7d10-0a4e-408f-aabe-066bde3f646b",
