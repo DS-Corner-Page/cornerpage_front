@@ -401,14 +401,14 @@
   },
   "나만의 다각형": {
     "id": 12,
-    "title": "나만의 다각형",
+    "title": "나다",
     "batch": "3기",
     "type": 1,
     "logo_image": "https://avatars.githubusercontent.com/u/158017604?s=200&v=4",
     "team_member": ["박소이", "정지민", "권나래", "김은서", "윤수정"],
     "introduction": "육각형 인간이라는 틀에서 벗어나 나를 받아들이고 노력을 통해 성장할 수 있음을 보여주는 서비스",
     "github_url": "https://github.com/CornerTone",
-    "service_name": "나다",
+    "service_name": "나만의 다각형",
     "tech_stack": ["node", "react"],
     "images": [
       "https://github.com/user-attachments/assets/2c0669e7-5729-41e8-a973-86e188853281",
