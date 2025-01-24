@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const ProjectDetailContainer = styled.div`
   margin-left: 50px;
+  margin-right: 50px;
 
   @media (max-width: 1024px) {
     margin-left: 30px;
   }
 
   @media (max-width: 480px) {
-    margin: 0px 0px 0px 20px;
+    margin-left: 20px;
   }
 `;
 
