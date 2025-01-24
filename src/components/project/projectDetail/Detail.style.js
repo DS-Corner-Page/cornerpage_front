@@ -29,7 +29,13 @@ export const ProjectTitle = styled.h2`
 
 export const Description = styled.div``;
 
-export const TeamName = styled.h3``;
+export const TeamName = styled.h3`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 21px;
+`;
 
 export const GithubContainer = styled.div`
   display: flex;
@@ -59,7 +65,19 @@ export const TeamMemberContainer = styled.h4`
   gap: 10px;
 `;
 
-export const TeamMember = styled.div``;
+export const TeamMember = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 21px;
+  font-weight: 300;
+  border: 1px solid #499fdd;
+  font-size: 12px;
+  color: #499fdd;
+  border-radius: 20px;
+  padding: 0px 7px;
+`;
 
 export const PresentationTitle = styled.h2`
   margin-top: 50px;
