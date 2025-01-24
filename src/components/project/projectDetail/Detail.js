@@ -1,47 +1,70 @@
-import * as P from "./Detail.style";
-import NodeIcon from "../../../assets/img/node.svg";
-import ReactIcon from "../../../assets/img/react.svg";
-import GithubLogo from "../../../assets/img/github.svg";
+import React from "react";
+import * as D from "./Detail.style";
+import projectData from "../../../core/project_data.json";
 import PresentationImage from "../presentationImage/PresentationImage";
+import GithubLogo from "../../../assets/img/github.svg";
+import { getIcon } from "../../../utils/iconMapper";
 
 export default function ProjectDetail({ id, setSelectedDetail }) {
-  // id 값으로 프로젝트 정보 가져오기
+  const projectDetails = Object.values(projectData).find(
+    (project) => project.id === id
+  );
+
+  if (!projectDetails) {
+    return <div>해당 프로젝트 데이터를 찾을 수 없습니다.</div>;
+  }
+
+  const {
+    title,
+    introduction,
+    team_member,
+    tech_stack,
+    images,
+    github_url,
+    logo_image,
+  } = projectDetails;
 
   return (
-    <P.ProjectDetailContainer>
-      <P.topContainer>
-        <P.GithubImage src="https://avatars.githubusercontent.com/u/128956089?s=200&v=4" />
-        <P.ProjectIntroduce>
-          <P.ProjectTitle>여긴 프로젝트명이 들어가야함</P.ProjectTitle>
-          <P.TeamMemberContainer>
-            <P.TeamMember>김은서</P.TeamMember>
-            <P.TeamMember>김은서</P.TeamMember>
-            <P.TeamMember>김은서</P.TeamMember>
-            <P.TeamMember>김은서</P.TeamMember>
-          </P.TeamMemberContainer>
-          <P.GithubContainer>
-            <P.GithubLink
-              href="https://github.com/7beunseo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <P.GithubLogo src={GithubLogo} alt="Github Logo" />
-            </P.GithubLink>
-            <div>Github Link</div>
-          </P.GithubContainer>
-          <P.StackContainer>
-            <P.ProjectStack src={NodeIcon} />
-            <P.ProjectStack src={ReactIcon} />
-          </P.StackContainer>
-        </P.ProjectIntroduce>
-      </P.topContainer>
-      <p>Project ID: {id}</p>
-      <P.ProjectTitle>발표 자료</P.ProjectTitle>
-      <P.PresentationImageContainer>
-        <PresentationImage src="https://github.com/user-attachments/assets/1d28ca77-87b4-410f-becd-9abad3c8b915" />
-        <PresentationImage src="https://github.com/user-attachments/assets/da1cc07a-a5e5-4f81-bffa-fbacadcc7c38" />
-        <PresentationImage src="https://github.com/user-attachments/assets/b8761560-b0d0-484f-a252-68a6adee4221" />
-      </P.PresentationImageContainer>
-    </P.ProjectDetailContainer>
+    <D.ProjectDetailContainer>
+      <D.topContainer>
+        <D.GithubImage src={logo_image} />
+        <D.ProjectIntroduce>
+          <D.ProjectTitle>{title}</D.ProjectTitle>
+          <D.Description>{introduction}</D.Description>
+          <D.TeamMemberContainer>
+            {team_member.map((member, index) => (
+              <D.TeamMember key={index}>{member}</D.TeamMember>
+            ))}
+          </D.TeamMemberContainer>
+          {github_url && (
+            <D.GithubContainer>
+              <D.GithubLink
+                href={github_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <D.GithubLogo src={GithubLogo} alt="Github Logo" />
+              </D.GithubLink>
+              <div>Github Link</div>
+            </D.GithubContainer>
+          )}
+          <D.StackContainer>
+            {tech_stack.map((stack, index) => (
+              <D.ProjectStack src={getIcon(stack)} />
+            ))}
+          </D.StackContainer>
+        </D.ProjectIntroduce>
+      </D.topContainer>
+      <D.PresentationTitle>발표 자료</D.PresentationTitle>
+      <D.PresentationImageContainer>
+        {images.map((image, index) => (
+          <PresentationImage
+            key={index}
+            src={image}
+            alt={`Project image ${index + 1}`}
+          />
+        ))}
+      </D.PresentationImageContainer>
+    </D.ProjectDetailContainer>
   );
 }
