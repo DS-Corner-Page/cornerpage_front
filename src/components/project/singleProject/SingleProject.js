@@ -1,6 +1,5 @@
 import * as S from "./SingleProject.style";
-import Node from "../../../assets/img/node.svg";
-import React from "../../../assets/img/react.svg";
+import { getIcon } from "../../../utils/iconMapper";
 
 export default function SingleProject({ title, img, id, setSelectedDetail }) {
   const handleClick = () => {
@@ -13,8 +12,8 @@ export default function SingleProject({ title, img, id, setSelectedDetail }) {
       <S.GithubImage src={img} />
       <S.ProjectTitle>{title}</S.ProjectTitle>
       <S.StackContainer>
-        <S.ProjectStack src={Node} />
-        <S.ProjectStack src={React} />
+        <S.ProjectStack src={getIcon("node")} />
+        <S.ProjectStack src={getIcon("typescript")} />
       </S.StackContainer>
     </S.SingleProjectContainer>
   );
