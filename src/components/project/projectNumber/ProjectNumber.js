@@ -2,18 +2,20 @@ import React from "react";
 import * as P from "./ProjectNumber.style";
 
 export default function ProjectNumber({ selectedProject, setSelectedProject }) {
-  const scrollPositions = {
-    "4기": 190,
-    "3기": 190,
-    "2기": 190,
-    "1기": 190,
-  };
-
   const handleClick = (number) => {
-    // 상세 조회에서 목록 조회로 변경
+    let scrollOffset;
+
+    if (window.innerWidth <= 480) {
+      scrollOffset = 125; // 480px 이하
+    } else if (window.innerWidth <= 768) {
+      scrollOffset = 140; // 768px 이하
+    } else {
+      scrollOffset = 190;
+    }
+
     setSelectedProject(number);
     window.scrollTo({
-      top: scrollPositions[number],
+      top: scrollOffset,
       behavior: "smooth",
     });
   };

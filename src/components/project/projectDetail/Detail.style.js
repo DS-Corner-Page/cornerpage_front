@@ -8,7 +8,7 @@ export const ProjectDetailContainer = styled.div`
   }
 
   @media (max-width: 480px) {
-    margin-left: 20px;
+    margin: 0px 0px 0px 20px;
   }
 `;
 

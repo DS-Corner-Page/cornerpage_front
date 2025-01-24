@@ -13,6 +13,7 @@ export const ProjectNumberContainer = styled.div`
 
   @media (max-width: 1024px) {
     padding: 0px 0px 20px 0px;
+    width: 80px;
   }
 `;
 
@@ -37,5 +38,6 @@ export const ProjectNumberItem = styled.div`
 
   @media (max-width: 480px) {
     width: 25px;
+    padding: 5px 20px;
   }
 `;
