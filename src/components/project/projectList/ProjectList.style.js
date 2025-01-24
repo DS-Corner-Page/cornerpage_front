@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProjectListContainer = styled.div`
   display: flex;
-  margin: 100px;
+  margin: 80px;
   position: sticky;
   top: 0;
 
