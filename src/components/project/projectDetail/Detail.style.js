@@ -27,6 +27,8 @@ export const ProjectTitle = styled.h2`
   height: 20px;
 `;
 
+export const TeamName = styled.h3``;
+
 export const GithubContainer = styled.div`
   display: flex;
   align-items: center;

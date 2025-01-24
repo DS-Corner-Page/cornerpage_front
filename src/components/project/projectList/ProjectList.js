@@ -24,7 +24,10 @@ export default function ProjectList({
       {selectedDetail ? (
         <Detail id={selectedDetail} setSelectedDetail={setSelectedDetail} />
       ) : (
-        <ProjectDisplay setSelectedDetail={setSelectedDetail} />
+        <ProjectDisplay
+          setSelectedDetail={setSelectedDetail}
+          selectedBatch={selectedProject}
+        />
       )}
     </P.ProjectListContainer>
   );
