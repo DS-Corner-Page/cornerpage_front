@@ -5,6 +5,7 @@ import React from "../../../assets/img/react.svg";
 export default function SingleProject({ title, img, id, setSelectedDetail }) {
   const handleClick = () => {
     setSelectedDetail(id);
+    window.scrollTo({ top: 190, behavior: "smooth" });
   };
 
   return (

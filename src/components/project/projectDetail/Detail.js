@@ -38,7 +38,7 @@ export default function ProjectDetail({ id, setSelectedDetail }) {
       <p>Project ID: {id}</p>
       <P.ProjectTitle>발표 자료</P.ProjectTitle>
       <P.PresentationImageContainer>
-        <PresentationImage src="https://github.com/user-attachments/assets/f1f1b3ea-e273-4443-972b-a47b3ba0e7fa" />
+        <PresentationImage src="https://github.com/user-attachments/assets/1d28ca77-87b4-410f-becd-9abad3c8b915" />
         <PresentationImage src="https://github.com/user-attachments/assets/da1cc07a-a5e5-4f81-bffa-fbacadcc7c38" />
         <PresentationImage src="https://github.com/user-attachments/assets/b8761560-b0d0-484f-a252-68a6adee4221" />
       </P.PresentationImageContainer>
