@@ -4,7 +4,7 @@ export const ProjectGroupContainer = styled.div`
   margin: 0px 70px 20px 50px;
 `;
 
-export const Title = styled.div`
+export const Title = styled.h3`
   font-size: 20px;
   margin-bottom: 20px;
   margin-left: 20px;
