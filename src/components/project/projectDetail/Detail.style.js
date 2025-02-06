@@ -13,7 +13,7 @@ export const ProjectDetailContainer = styled.div`
   }
 
   @media (max-width: 420px) {
-    margin-right: 10px;
+    margin: 0px 5px;
   }
 `;
 
