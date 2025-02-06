@@ -11,6 +11,10 @@ export const ProjectDetailContainer = styled.div`
   @media (max-width: 480px) {
     margin-left: 20px;
   }
+
+  @media (max-width: 420px) {
+    margin-right: 10px;
+  }
 `;
 
 export const topContainer = styled.div`
@@ -243,5 +247,9 @@ export const PresentationImageContainer = styled.div`
 
   @media (max-width: 480px) {
     height: 170px;
+  }
+
+  @media (max-width: 420px) {
+    width: 100%;
   }
 `;
