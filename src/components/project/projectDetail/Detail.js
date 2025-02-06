@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as D from "./Detail.style";
 import projectData from "../../../core/project_data.json";
 import PresentationImage from "../presentationImage/PresentationImage";
@@ -6,6 +6,20 @@ import GithubLogo from "../../../assets/img/github.svg";
 import { getIcon } from "../../../utils/iconMapper";
 
 export default function ProjectDetail({ id, setSelectedDetail }) {
+  useEffect(() => {
+    window.history.pushState(null, "", window.location.href);
+
+    const handleBackButton = () => {
+      setSelectedDetail(null);
+    };
+
+    window.addEventListener("popstate", handleBackButton);
+
+    return () => {
+      window.removeEventListener("popstate", handleBackButton);
+    };
+  }, [setSelectedDetail]);
+
   const projectDetails = Object.values(projectData).find(
     (project) => project.id === id
   );
