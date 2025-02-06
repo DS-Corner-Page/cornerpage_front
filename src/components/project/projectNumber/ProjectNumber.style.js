@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const ProjectNumberContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 13px;
+  margin-left: 20px;
+
   padding: 0px 0px 20px 20px;
   align-items: center;
 
@@ -16,27 +18,30 @@ export const ProjectNumberContainer = styled.div`
 `;
 
 export const ProjectNumberItem = styled.div`
-  padding: 5px 30px;
-  width: 35px;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
+  font-size: 14px;
+  font-weight: bold;
 
-  background: ${({ isSelected }) =>
-    isSelected ? "linear-gradient(90deg, #FFFFFF, #FDF0C5)" : "white"};
+  background: ${({ isSelected }) => (isSelected ? "#FDF0C5" : "white")};
 
   &:hover {
-    background: ${({ isSelected }) =>
-      isSelected ? "linear-gradient(90deg, #FFFFFF, #FDF0C5)" : "#f0f0f0"};
+    background: ${({ isSelected }) => (isSelected ? "#FDF0C5" : "#f0f0f0")};
   }
 
   @media (max-width: 768px) {
-    width: 30px;
-    padding: 5px 20px;
+    width: 35px;
+    height: 35px;
   }
 
   @media (max-width: 480px) {
     width: 25px;
-    padding: 5px 20px;
+    height: 25px;
   }
 `;
