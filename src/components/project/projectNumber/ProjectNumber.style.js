@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ProjectNumberContainer = styled.div`
-  width: 100px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -13,7 +12,6 @@ export const ProjectNumberContainer = styled.div`
 
   @media (max-width: 1024px) {
     padding: 0px 0px 20px 0px;
-    width: 80px;
   }
 `;
 
