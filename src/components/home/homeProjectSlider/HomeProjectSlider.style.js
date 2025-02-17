@@ -19,29 +19,29 @@ export const SlideTrack = styled.div`
 export const ProjectCard = styled.div`
   min-width: 460px;
   height: 260px;
-  border-radius: 12px;
+  border-radius: 10px;
   background-color: white;
   box-shadow: 2px 2px 10px rgba(130, 130, 130, 0.1);
   overflow: hidden;
   flex-shrink: 1;
 
   @media (max-width: 1024px) {
-    min-width: 300px;
+    min-width: 400px;
     height: 230px;
   }
 
   @media (max-width: 768px) {
-    min-width: 250px;
-    height: 180px;
+    min-width: 340px;
+    height: 190px;
   }
 
   @media (max-width: 480px) {
-    min-width: 200px;
-    height: 130px;
+    min-width: 260px;
+    height: 150px;
   }
 
   @media (max-width: 400px) {
-    min-width: 180px;
+    min-width: 190px;
     height: 110px;
   }
 `;
