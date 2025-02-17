@@ -35,7 +35,7 @@ export const ProjectList = styled.div`
     height: 150px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 400px) {
     height: 110px;
   }
 `;

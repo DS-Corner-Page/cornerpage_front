@@ -23,7 +23,7 @@ export const ProjectCard = styled.div`
   background-color: white;
   box-shadow: 2px 2px 10px rgba(130, 130, 130, 0.1);
   overflow: hidden;
-  flex-shrink: 0;
+  flex-shrink: 1;
 
   @media (max-width: 1024px) {
     min-width: 300px;
@@ -40,7 +40,7 @@ export const ProjectCard = styled.div`
     height: 130px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 400px) {
     min-width: 180px;
     height: 110px;
   }
