@@ -3,7 +3,9 @@ import * as S from "./HomeProjectSlider.style";
 
 function getCardWidth() {
   const width = window.innerWidth;
-  if (width <= 480) {
+  if (width <= 400) {
+    return 180;
+  } else if (width <= 480) {
     return 200; 
   } else if (width <= 768) {
     return 250;
@@ -21,11 +23,15 @@ export default function HomeProjectSlider({ projects, direction }) {
     const handleResize = () => {
       setCardWidth(getCardWidth());
     };
+  
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+  
 
-  const SLIDE_WIDTH = useMemo(() => cardWidth + 16, [cardWidth]);
+  const SLIDE_WIDTH = useMemo(() => cardWidth, [cardWidth]);
   const ORIGINAL_LENGTH = projects.length;
   const ProjectLists = useMemo(() => [...projects, ...projects], [projects]);
 
