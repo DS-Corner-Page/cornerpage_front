@@ -35,14 +35,14 @@ export default function HomeProjectSlider({ projects, direction }) {
   const ORIGINAL_LENGTH = projects.length;
   const ProjectLists = useMemo(() => [...projects, ...projects], [projects]);
 
-  // 이미지 초기 위치 지정`
-  const initialX = direction === "left" ? 0 : -ORIGINAL_LENGTH * SLIDE_WIDTH;
+  // 이미지 초기 위치 지정
+  const initialX = direction === "left" ? 0 : (ORIGINAL_LENGTH - 1) * SLIDE_WIDTH;
   const [currentX, setCurrentX] = useState(initialX);
   const slideRef = useRef(null);
   const speed = useRef(2); 
   const intervalRef = useRef(null);
   
-  const stopSlide = useCallback(() => {
+  const startSlide = useCallback(() => {
     if (intervalRef.current) return;
     let lastTime = performance.now();
 
@@ -56,10 +56,10 @@ export default function HomeProjectSlider({ projects, direction }) {
         let newX;
         if (direction === "left") {
           newX = prevX - speed.current * (deltaTime / 16); 
-          if (newX <= -ORIGINAL_LENGTH * SLIDE_WIDTH) return 0;
+          if (newX <= -ORIGINAL_LENGTH * SLIDE_WIDTH) return SLIDE_WIDTH/4;
         } else {
           newX = prevX + speed.current * (deltaTime / 16);
-          if (newX >= 0) return -ORIGINAL_LENGTH * SLIDE_WIDTH;
+          if (newX >= 0) return -ORIGINAL_LENGTH * SLIDE_WIDTH + SLIDE_WIDTH/4;
         }
         return newX;
       });
@@ -70,7 +70,7 @@ export default function HomeProjectSlider({ projects, direction }) {
     intervalRef.current = requestAnimationFrame(step);
   }, [direction, ORIGINAL_LENGTH, SLIDE_WIDTH]);
 
-  const startSlide = useCallback(() => {
+  const stopSlide = useCallback(() => {
     if (intervalRef.current) {
       cancelAnimationFrame(intervalRef.current);
       intervalRef.current = null;
