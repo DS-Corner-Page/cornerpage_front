@@ -37,6 +37,11 @@ export const GithubImage = styled.img`
     width: 140px;
     height: 140px;
   }
+
+  @media (max-width: 420px) {
+    width: 110px;
+    height: 110px;
+  }
 `;
 
 export const ProjectTitle = styled.div`

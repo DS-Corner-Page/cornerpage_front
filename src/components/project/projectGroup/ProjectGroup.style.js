@@ -10,6 +10,10 @@ export const ProjectGroupContainer = styled.div`
   @media (max-width: 480px) {
     margin: 0px 0px 20px 30px;
   }
+
+  @media (max-width: 420px) {
+    margin: 0px 0px 20px 20px;
+  }
 `;
 
 export const Title = styled.h3`

@@ -6,10 +6,16 @@ export const ProjectDetailContainer = styled.div`
 
   @media (max-width: 1024px) {
     margin-left: 30px;
+    margin-right: 20px;
   }
 
   @media (max-width: 480px) {
     margin-left: 20px;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 420px) {
+    margin: 0px 5px;
   }
 `;
 
@@ -204,7 +210,7 @@ export const PresentationImageContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  height: 800px;
+  height: calc(((100vw) - 330px) / 2);
   gap: 10px;
   padding: 10px;
   scrollbar-width: thin;
@@ -222,26 +228,22 @@ export const PresentationImageContainer = styled.div`
     background: transparent;
   }
 
-  @media (max-width: 1600px) {
-    /* Tablet */
-    height: 520px;
-  }
-
   @media (max-width: 1200px) {
     /* Tablet */
-    height: 350px;
+    height: calc(((100vw) - 320px) / 2);
+  }
+
+  @media (max-width: 1024px) {
+    /* Tablet */
+    height: calc(((100vw) - 200px) / 2);
   }
 
   @media (max-width: 768px) {
-    padding: 5px;
-    height: 300px;
-  }
-
-  @media (max-width: 600px) {
-    height: 250px;
+    height: calc(((100vw) - 160px) / 2);
   }
 
   @media (max-width: 480px) {
-    height: 170px;
+    /* Tablet */
+    height: calc(((100vw) - 90px) / 2);
   }
 `;
