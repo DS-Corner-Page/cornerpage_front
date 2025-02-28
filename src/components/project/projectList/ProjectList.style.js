@@ -7,6 +7,6 @@ export const ProjectListContainer = styled.div`
   top: 0;
 
   @media (max-width: 480px) {
-    margin: 60px 15px 30px 0px;
+    margin: 60px 0px 30px 0px;
   }
 `;
