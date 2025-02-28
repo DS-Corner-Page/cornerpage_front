@@ -45,6 +45,7 @@ export const ProjectTitle = styled.div`
   margin-top: 10px;
   text-align: center;
   height: 20px;
+  font-weight: bold;
 `;
 
 export const StackContainer = styled.div`

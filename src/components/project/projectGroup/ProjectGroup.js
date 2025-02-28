@@ -21,7 +21,7 @@ export default function ProjectGroup({
           <SingleProject
             key={project.id}
             id={project.id}
-            title={project.title}
+            title={project.service_name}
             img={project.logo_image}
             setSelectedDetail={setSelectedDetail}
             techStack={project.tech_stack}
