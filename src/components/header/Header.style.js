@@ -37,6 +37,7 @@ export const Section1 = styled.div`
 `;
 
 export const Section2 = styled.img`
+  cursor: pointer;
   @media (min-width: 768px) {
     display: none;
   }
@@ -78,8 +79,11 @@ export const SideHead = styled.div`
   justify-content: space-between;
 `;
 
-export const X = styled.img``;
+export const X = styled.img`
+  cursor: pointer;
+`;
 
 export const Link2 = styled.div`
   font-size: 20px;
+  cursor: pointer;
 `;
