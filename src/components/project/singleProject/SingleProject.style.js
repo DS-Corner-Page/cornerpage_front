@@ -12,10 +12,7 @@ export const GithubImage = styled.img`
   width: 180px;
   height: 180px;
   border-radius: 10%;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    filter 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 
   &:hover {
     transform: scale(1.1) rotate(2deg);
@@ -39,8 +36,8 @@ export const GithubImage = styled.img`
   }
 
   @media (max-width: 420px) {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
   }
 `;
 

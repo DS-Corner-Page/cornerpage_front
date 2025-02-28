@@ -1,11 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as D from "./Detail.style";
-import projectData from "../../../core/project_data.json";
 import PresentationImage from "../presentationImage/PresentationImage";
 import GithubLogo from "../../../assets/img/github.svg";
 import { getIcon } from "../../../utils/iconMapper";
 
 export default function ProjectDetail({ id, setSelectedDetail }) {
+  const [projectData, setProjectData] = useState([]);
+
+  useEffect(() => {
+    // 프로젝트 데이터 불러오기
+    fetch(process.env.PUBLIC_URL + "/data/project_data.json")
+      .then((res) => res.json())
+      .then((data) => setProjectData(data))
+      .catch((err) => console.error("Failed to load project data:", err));
+  }, []);
+
   useEffect(() => {
     window.history.pushState(null, "", window.location.href);
 
@@ -19,6 +28,11 @@ export default function ProjectDetail({ id, setSelectedDetail }) {
       window.removeEventListener("popstate", handleBackButton);
     };
   }, [setSelectedDetail]);
+
+  // 데이터가 로드되지 않은 경우 로딩 메시지 표시
+  if (projectData.length === 0) {
+    return <div>Loading project details...</div>;
+  }
 
   const projectDetails = Object.values(projectData).find(
     (project) => project.id === id
@@ -42,14 +56,14 @@ export default function ProjectDetail({ id, setSelectedDetail }) {
   return (
     <D.ProjectDetailContainer>
       <D.topContainer>
-        <D.GithubImage src={logo_image} />
+        <D.GithubImage src={logo_image} alt="Project Logo" />
         <D.ProjectIntroduce>
           <D.ProjectTitle>
             <D.HighLite>{service_name}</D.HighLite>
 
             <D.StackContainer>
               {tech_stack.map((stack, index) => (
-                <D.ProjectStack src={getIcon(stack)} />
+                <D.ProjectStack key={index} src={getIcon(stack)} />
               ))}
             </D.StackContainer>
           </D.ProjectTitle>
