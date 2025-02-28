@@ -22,17 +22,17 @@ export const ProjectImg = styled.img`
   }
 
   @media (max-width: 1200px) {
-    width: 290px;
-    height: 220px;
+    width: 315px;
+    height: 240px;
     margin: 70px 70px 30px 0px;
-    transform: translateX(150px); 
+    transform: translateX(95px); 
   }
 
   @media (max-width: 1024px) {
     width: 250px;
     height: 190px;
     margin: 100px 50px;
-    transform: translateX(20px); 
+    transform: translateX(50px); 
   }
 
   @media (max-width: 768px) {
