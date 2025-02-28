@@ -55,7 +55,9 @@ export const VerticalBar = styled.div`
 export const HorizontalBar = styled.div`
   position: absolute;
   background-color: black;
-  width: 900px;
+  width: 80vw;
+  max-width: 900px;
+  min-width: 250px;
   height: 10px;
   top: 30px;
   ${({ direction }) => `${direction === "left" ? "left: 7px;" : "right: 7px;"}`}
@@ -89,19 +91,27 @@ export const HorizontalBar = styled.div`
 
 
   @media (max-width: 1440px) {
-    width: 750px;
+    max-width: 680px;
   }
 
-  @media (max-width: 1280px) {
-    width: 580px;  
+  @media (max-width: 1200px) {
+    max-width: 440px;  
   }
 
   @media (max-width: 1024px) {
-    width: 390px;
+    max-width: 500px;
+  }
+
+  @media (max-width: 924px) {
+    max-width: 450px;
+  }
+
+  @media (max-width: 880px) {
+    max-width: 370px;
   }
 
   @media (max-width: 768px) {
-    width: 375px;
+    max-width: 375px;
     height: 7px;
     top: 20px;
 

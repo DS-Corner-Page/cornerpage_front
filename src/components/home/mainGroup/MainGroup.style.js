@@ -106,7 +106,7 @@ export const ActivityTitle = styled.div`
 
   @media (max-width: 768px) {
     font-size: 35px;
-    transform: translateY(-30px);
+    transform: translateY(-25px);
   }
 
   @media (max-width: 480px) {
