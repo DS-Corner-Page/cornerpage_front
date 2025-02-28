@@ -5,6 +5,10 @@ export const Gallery = styled.div`
   padding: 5% 10%;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 480px) {
+    margin-top: 60px;
+  }
 `;
 
 export const SideBar = styled.div`

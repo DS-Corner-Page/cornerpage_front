@@ -16,6 +16,7 @@ export const ProjectDetailContainer = styled.div`
 
   @media (max-width: 420px) {
     margin: 0px 5px;
+    margin-left: 20px;
   }
 `;
 
@@ -128,6 +129,7 @@ export const StackContainer = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
+  margin-left: 20px;
 `;
 
 export const ProjectStack = styled.img`
@@ -208,6 +210,7 @@ export const PresentationTitle = styled.h2`
 
 export const PresentationImageContainer = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   overflow-y: auto;
   height: calc(((100vw) - 330px) / 2);
@@ -244,6 +247,6 @@ export const PresentationImageContainer = styled.div`
 
   @media (max-width: 480px) {
     /* Tablet */
-    height: calc(((100vw) - 90px) / 2);
+    height: calc(((100vw) - 110px) / 2);
   }
 `;
