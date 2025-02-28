@@ -38,18 +38,20 @@ export const Now = styled.div`
   width: 31px;
   height: 31px;
   background-color: ${(props) => (props.isactive ? "#FEF4D5" : "white")};
+
+  &:hover {
+    background: ${({ isactive }) => (isactive ? "#FDF0C5" : "#f0f0f0")};
+  }
+
   border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+
   @media (max-width: 768px) {
     width: 26px;
     height: 26px;
-  }
-
-  &:hover {
-    background: ${({ isSelected }) => (isSelected ? "#FDF0C5" : "#f0f0f0")};
   }
 `;
 

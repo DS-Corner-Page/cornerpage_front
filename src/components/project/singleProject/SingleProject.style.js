@@ -46,6 +46,22 @@ export const ProjectTitle = styled.div`
   text-align: center;
   height: 20px;
   font-weight: bold;
+  width: 180px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  @media (max-width: 768px) {
+    width: 140px;
+  }
+
+  @media (max-width: 480px) {
+    width: 140px;
+  }
+
+  @media (max-width: 420px) {
+    width: 100px;
+  }
 `;
 
 export const StackContainer = styled.div`
