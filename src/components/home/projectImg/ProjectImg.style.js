@@ -15,15 +15,14 @@ export const ProjectImgContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-    transform: translate(200px, -40px);
+    transform: translate(200px, -50px);
     gap: 70px;
-    margin: 40px;
   }
 
   @media (max-width: 768px) {
-    transform: translateX(150px);
+    transform: translateX(140px);
     gap: 70px;
-    margin: 25px;
+    margin: 15px;
   }
 
   @media (max-width: 480px) {
@@ -43,7 +42,7 @@ export const ProjectImg = styled.img`
   }
 
   @media (max-width: 768px) {
-    width: 50%;
+    width: 43%;
   }
 
   @media (max-width: 480px) {
