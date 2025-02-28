@@ -43,6 +43,10 @@ export const Now = styled.div`
     width: 26px;
     height: 26px;
   }
+
+  &:hover {
+    background: ${({ isSelected }) => (isSelected ? "#FDF0C5" : "#f0f0f0")};
+  }
 `;
 
 export const ImageContainer = styled.div`
