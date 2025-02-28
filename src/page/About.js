@@ -12,6 +12,10 @@
 
 import Title from "../components/title/title/Title";
 import * as S from "../styles/About.style";
+import groupImage from "../assets/img/Group 38.png";
+
+
+
 
 export default function About() {
   return (
@@ -104,6 +108,9 @@ export default function About() {
             이를 동아리 내에서 공유하는 경험으로 한정하지 않고, 외부 공모전 참여를 독려하여 
             지원사업을 연결하고 SW 개발과 관련하여 다양한 방법으로 성장할 수 있는 발판을 마련합니다.
           </S.Text>
+          <br></br>
+          <br></br>
+          <img src={groupImage} alt="운영 목표 이미지" style={{ display:"block", margin: "0 auto", maxWidth: "100%", height: "auto" }} />
         </S.Section>
 
 
