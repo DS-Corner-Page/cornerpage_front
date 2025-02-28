@@ -6,14 +6,53 @@ export const ListContainer = styled.div`
   align-items: center;
   width: 100%;
   overflow: hidden;
+
+  &:hover .list,
+  &:hover .clone {
+    animation-play-state: paused;
+  }
+
 `;
 
 export const SlideTrack = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+  padding: 0 14px;
   will-change: transform;
-  transition: none;
+
+  &.list {
+    animation: ${props => props.direction === "left" ? "listLeft" : "listRight"} ${props => props.duration}s linear infinite;
+  }
+
+  &.clone {
+    animation: ${props => props.direction === "left" ? "cloneLeft" : "cloneRight"} ${props => props.duration}s linear infinite;
+  }
+
+  @keyframes listLeft {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-100%); } 
+    50.01% { transform: translateX(100%); } 
+    100% { transform: translateX(0); }
+  }
+
+  @keyframes cloneLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-200%); }
+  }
+
+
+  @keyframes listRight {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(100%); }
+    50.01% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+  }
+
+  @keyframes cloneRight {
+    0% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+  }
 `;
 
 export const ProjectCard = styled.div`
