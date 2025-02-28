@@ -70,6 +70,10 @@ export const Title = styled.div`
     font-size: 26px;
     height: 100%;
   }
+
+  @media (max-width: 430px) {
+    font-size: 23px;
+  }
 `;
 
 export const Bar = styled.img`
