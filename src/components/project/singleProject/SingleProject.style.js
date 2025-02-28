@@ -36,8 +36,8 @@ export const GithubImage = styled.img`
   }
 
   @media (max-width: 420px) {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
   }
 `;
 
