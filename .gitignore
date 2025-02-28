@@ -21,6 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 5a0702bb61d1af5f30cf4c16ac67e03a96aa3a82
 *.textClipping
