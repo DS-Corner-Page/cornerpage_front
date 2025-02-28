@@ -18,6 +18,7 @@ export const Num = styled.div`
   display: flex;
   cursor: pointer;
   font-size: 20px;
+
   @media (max-width: 1024px) {
     font-size: 20px;
   }
@@ -30,15 +31,17 @@ export const Num = styled.div`
 `;
 
 export const Now = styled.div`
-  width: 30px;
-  height: 25px;
+  width: 31px;
+  height: 31px;
   background-color: ${(props) => (props.isactive ? "#FEF4D5" : "white")};
   border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
   @media (max-width: 768px) {
-    width: 25px;
+    width: 26px;
+    height: 26px;
   }
 `;
 
