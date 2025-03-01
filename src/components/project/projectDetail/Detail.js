@@ -31,7 +31,7 @@ export default function ProjectDetail({ id, setSelectedDetail }) {
 
   // 데이터가 로드되지 않은 경우 로딩 메시지 표시
   if (projectData.length === 0) {
-    return <div>Loading project details...</div>;
+    return <></>;
   }
 
   const projectDetails = Object.values(projectData).find(
