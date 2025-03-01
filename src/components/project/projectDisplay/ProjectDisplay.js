@@ -14,7 +14,7 @@ export default function ProjectDisplay({ setSelectedDetail, selectedBatch }) {
 
   // 데이터가 로드되지 않았을 경우 대비
   if (projectData.length === 0) {
-    return <p>Loading projects...</p>;
+    return <></>;
   }
 
   const hackathonProjects = Object.values(projectData).filter(
