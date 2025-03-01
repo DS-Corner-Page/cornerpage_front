@@ -26,7 +26,7 @@ const ActivityList =[
     type: 2
   },
   {
-    title: "컴퍼런스",
+    title: "컨퍼런스",
     content: "코코넛들의 이야기를 다양한 각도에서 비춰보는 자리입니다. 각 세션에서 한 팀이 중심이 되어 강연 형식으로 발표하고, 질의응답과 함께 담소를 나누는 시간을 갖습니다. 유심히 찾아보면 좋은 코딩 개념, 세간의 IT 이슈, 사람 사는 이야기까지 어떤 주제든 조명해 봅시다.",
     backgroundImg: conferenceImg,
     direction: "left"
