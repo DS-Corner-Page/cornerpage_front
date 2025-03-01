@@ -856,7 +856,7 @@
     "type": 1,
     "logo_image": "https://github.com/user-attachments/assets/2a88599e-42f4-48ba-9484-794034ffa471",
     "team_member": ["크롱", "엔초", "설리반", "오즈", "푸짐바오"],
-    "introduction": "정산의 손쉬운 관리와 효율적이고 투명한 정산을 지원하며 쉽고 간편한 정산을 돕는 웹 서비스입니다. 전체 지출 금액에서 참여자들이 가장 최소로 송금할 수 있는 경우의 수를 계산하는 알고리즘을 구축하여 정산의 효율성을 높이고자 하였습니다.",
+    "introduction": "코드 실행부터 개발자 소통까지 한 곳에서 해결! 개발 분야별 게시판 제공, 개발자들의 놀이터 'Code Ground'에서 함께해요!",
     "github_url": "https://github.com/corner-codeground/codeground.git",
     "service_name": "Code Ground",
     "tech_stack": ["react", "node"],
