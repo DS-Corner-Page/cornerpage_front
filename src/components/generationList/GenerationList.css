@@ -80,6 +80,7 @@
     position: relative;
     flex: 1; /* 너비를 균등하게 조정 */
     max-width: 30%; /* 기수 목록이 너무 넓어지지 않도록 제한 */
+    margin: 0 auto;
   }
   
   .generation-item {
