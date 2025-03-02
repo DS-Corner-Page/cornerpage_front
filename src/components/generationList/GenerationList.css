@@ -108,3 +108,31 @@
     z-index: 3; /* 활성화된 원이 더 위로 올라오도록 설정 */
   }
   
+
+  .interview-content {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+  }
+  
+  .interview-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+  }
+  
+  .interview-item h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .interview-item pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 14px;
+    color: #555;
+  }
+  
