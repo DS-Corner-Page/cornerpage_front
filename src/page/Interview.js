@@ -156,19 +156,25 @@ export default function Interview() {
   };
 
   return (
-    <>
+    <div className="interview-container">
       <Title title="코너 인터뷰" subtitle={`${selectedGen} 인터뷰`} color="blue" />
-      <GenerationList onGenClick={handleGenClick} />
-      
-      {/* 인터뷰 내용 표시 */}
-      <div className="interview-content">
-        {interviewData[selectedGen]?.map((person, index) => (
-          <div key={index} className="interview-item">
-            <h3>{person.name}</h3>
-            <pre>{person.content}</pre>
-          </div>
-        ))}
+      <div className="content">
+        {/* 좌측 기수 목록 */}
+        <div className="generation-list">
+          <GenerationList onGenClick={setSelectedGen} />
+        </div>
+        
+        {/* 인터뷰 내용 표시 */}
+        <div className="interview-content">
+          {interviewData[selectedGen]?.map((person, index) => (
+            <div key={index} className="interview-item">
+              <h3>{person.name}</h3>
+              <pre>{person.content}</pre>
+            </div>
+          ))}
+        </div>
       </div>
-    </>
+      
+    </div>
   );
 }
