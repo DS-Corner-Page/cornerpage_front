@@ -18,6 +18,7 @@ export const Num = styled.div`
   display: flex;
   cursor: pointer;
   font-size: 20px;
+
   @media (max-width: 1024px) {
     font-size: 20px;
   }
