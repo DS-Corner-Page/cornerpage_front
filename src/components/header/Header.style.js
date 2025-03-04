@@ -13,6 +13,7 @@ export const Section = styled.div`
   align-items: center;
 `;
 export const Logo = styled.img`
+  cursor: pointer;
   width: 30px;
   height: 30px;
 `;
@@ -81,6 +82,7 @@ export const SideHead = styled.div`
 
 export const X = styled.img`
   cursor: pointer;
+  width: 30px;
 `;
 
 export const Link2 = styled.div`

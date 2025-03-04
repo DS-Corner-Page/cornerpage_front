@@ -31,9 +31,10 @@ export const Links = styled.div`
   gap: 10px;
   margin-top: 10px;
 `;
-export const Button = styled.div``;
+export const Button = styled.div`
+  cursor: pointer;
+`;
 export const Img = styled.img`
   width: 1.5rem;
   height: 1.5rem;
 `;
-export const Link = styled.div``;
