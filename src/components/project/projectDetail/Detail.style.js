@@ -16,6 +16,7 @@ export const ProjectDetailContainer = styled.div`
 
   @media (max-width: 420px) {
     margin: 0px 5px;
+    margin-left: 20px;
   }
 `;
 
@@ -51,6 +52,7 @@ export const ProjectIntroduce = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: 100%;
 
   @media (max-width: 1024px) {
     gap: 15px;
@@ -62,14 +64,12 @@ export const ProjectIntroduce = styled.div`
 `;
 
 export const ProjectTitle = styled.h2`
-  height: 20px;
+  height: 100%;
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-left: 7px;
 
   @media (max-width: 1024px) {
-    height: 30px;
   }
 
   @media (max-width: 768px) {
@@ -78,19 +78,14 @@ export const ProjectTitle = styled.h2`
 `;
 
 export const HighLite = styled.span`
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: -8px;
-    bottom: 0; /* 텍스트 아래쪽 위치 */
-    width: 120%;
-    height: 30%; /* 형광펜 높이 */
-    background-color: rgb(255, 218, 95); /* 형광펜 색상 */
-    z-index: -1;
-    border-radius: 5px; /* 형광펜 모서리 둥글게 */
-  }
+  background: linear-gradient(
+    to bottom,
+    transparent calc(100% - 12px),
+    rgb(255, 218, 95) calc(100% - 12px)
+  );
+  border-radius: 3px;
+  padding: 0 3px;
+  display: inline;
 `;
 
 export const Description = styled.div`
@@ -194,11 +189,9 @@ export const TeamMember = styled.div`
 
 export const PresentationTitle = styled.h2`
   margin-top: 50px;
-  padding: 10px;
 
   @media (max-width: 768px) {
     font-size: 20px;
-    padding: 5px;
   }
 
   @media (max-width: 480px) {
@@ -208,11 +201,12 @@ export const PresentationTitle = styled.h2`
 
 export const PresentationImageContainer = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   overflow-y: auto;
   height: calc(((100vw) - 330px) / 2);
   gap: 10px;
-  padding: 10px;
+  margin-top: 20px;
   scrollbar-width: thin;
   scrollbar-color: darkgray transparent;
 
@@ -240,10 +234,12 @@ export const PresentationImageContainer = styled.div`
 
   @media (max-width: 768px) {
     height: calc(((100vw) - 160px) / 2);
+    margin-top: 15px;
   }
 
   @media (max-width: 480px) {
     /* Tablet */
     height: calc(((100vw) - 90px) / 2);
+    margin-top: 10px;
   }
 `;

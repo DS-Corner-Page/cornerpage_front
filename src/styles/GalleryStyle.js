@@ -5,6 +5,10 @@ export const Gallery = styled.div`
   padding: 5% 10%;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 480px) {
+    margin-top: 60px;
+  }
 `;
 
 export const SideBar = styled.div`
@@ -31,15 +35,23 @@ export const Num = styled.div`
 `;
 
 export const Now = styled.div`
-  width: 30px;
-  height: 25px;
+  width: 31px;
+  height: 31px;
   background-color: ${(props) => (props.isactive ? "#FEF4D5" : "white")};
+
+  &:hover {
+    background: ${({ isactive }) => (isactive ? "#FDF0C5" : "#f0f0f0")};
+  }
+
   border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
+
   @media (max-width: 768px) {
-    width: 25px;
+    width: 26px;
+    height: 26px;
   }
 `;
 

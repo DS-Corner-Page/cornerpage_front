@@ -1,8 +1,22 @@
+import { useState, useEffect } from "react";
 import * as P from "./ProjectDisplay.style";
 import ProjectGroup from "../projectGroup/ProjectGroup";
-import projectData from "../../../core/project_data.json";
 
 export default function ProjectDisplay({ setSelectedDetail, selectedBatch }) {
+  const [projectData, setProjectData] = useState([]);
+
+  useEffect(() => {
+    fetch(process.env.PUBLIC_URL + "/data/project_data.json") // public 폴더에서 JSON 불러오기
+      .then((res) => res.json())
+      .then((data) => setProjectData(data))
+      .catch((err) => console.error("Failed to load project data:", err));
+  }, []);
+
+  // 데이터가 로드되지 않았을 경우 대비
+  if (projectData.length === 0) {
+    return <></>;
+  }
+
   const hackathonProjects = Object.values(projectData).filter(
     (project) => project.type === 1
   );

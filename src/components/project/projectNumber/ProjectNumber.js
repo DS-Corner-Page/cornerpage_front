@@ -10,7 +10,12 @@ export default function ProjectNumber({ selectedProject, setSelectedProject }) {
   return (
     <A.SideBar>
       {["4기", "3기", "2기", "1기"].map((item) => (
-        <A.Now key={item} isSelected={selectedProject === item} onClick={() => handleClick(item)}>
+        <A.Now
+          key={item}
+          isSelected={selectedProject === item}
+          onClick={() => handleClick(item)}
+          isactive={selectedProject === item}
+        >
           <A.Num>{item}</A.Num>
         </A.Now>
       ))}
