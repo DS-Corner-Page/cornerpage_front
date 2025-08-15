@@ -31,6 +31,14 @@ export const Question = styled.p`
   font-weight: 700;
   white-space: pre-wrap;
   line-height: 1.75;
+
+  @media (max-width: 768px) {
+    white-space: nowrap;        
+    overflow: hidden;          
+    text-overflow: ellipsis;    
+    word-break: keep-all;       
+    line-height: 1.6;
+  }
 `;
 
 export const Answer = styled.p`
