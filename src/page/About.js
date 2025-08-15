@@ -57,10 +57,10 @@ export default function About() {
           <S.Text>
             실낱같은 가능성이 인생의 가장 큰 확신이 서가는 그 과정에 우리가 함께할 수 있다면 우리는 그걸로 충분해요.
           </S.Text>
-          <S.ImagePlaceholder>
+          {/* <S.ImagePlaceholder>
             구체 여부에 따라 사진 넣는 형태가 달라짐... <br />
             
-          </S.ImagePlaceholder>
+          </S.ImagePlaceholder> */}
         </S.Section>
 
         <S.Section>
