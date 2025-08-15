@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const GradientBarContainer = styled.div`
-  width: 1000px;
+  width: 1800px;
   height: 60px;
   background: linear-gradient(
     90deg,
