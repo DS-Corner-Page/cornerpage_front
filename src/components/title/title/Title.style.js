@@ -51,7 +51,7 @@ export const BottomContainer = styled.div`
 export const Title = styled.div`
   font-size: 40px;
   font-weight: bold;
-  width: 400px;
+  width: 440px;
   text-align: center;
   display: flex;
   justify-content: center;
