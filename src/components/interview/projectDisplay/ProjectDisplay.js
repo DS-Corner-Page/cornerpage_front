@@ -6,7 +6,7 @@ export default function ProjectDisplay({ selectedBatch, interviewData }) {
   return (
     <P.ProjectDisplayContainer>
       {list.length === 0 && (
-        <P.Empty>아직 등록된 인터뷰가 없습니다.</P.Empty>
+        <P.Empty>인터뷰가 없습니다.</P.Empty>
       )}
 
       <P.Grid>
