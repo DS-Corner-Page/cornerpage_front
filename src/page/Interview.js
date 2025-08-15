@@ -1,46 +1,16 @@
-// import Title from "../components/title/title/Title";
-// import ProjectList from "../components/project/projectList/ProjectList";
-
-// export default function Interview() {
-//   return (
-//     <>
-//       <Title title="코너 인터뷰" subtitle="IT 소모임 Corner" color="blue" />
-//     </>
-//   );
-// }
-
-//최종 코드
-// import React, { useState } from "react";
-// import Title from "../components/title/title/Title";
-// import GenerationList from "../components/generationList/GenerationList";
-
-// export default function Interview() {
-//   const [selectedGen, setSelectedGen] = useState("4기 인터뷰");
-
-//   const handleGenClick = (gen) => {
-//     setSelectedGen(`${gen} 인터뷰`);
-//   };
-
-//   return (
-//     <>
-//       <Title title="코너 인터뷰" subtitle={selectedGen} color="blue" />
-//       <GenerationList onGenClick={handleGenClick} />
-//     </>
-//   );
-// }
-
-
-//인터뷰 내용 추가한 코드
 import React, { useState } from "react";
 import Title from "../components/title/title/Title";
-import GenerationList from "../components/generationList/GenerationList";
+import ProjectList from "../components/interview/projectList/ProjectList";
 
-const interviewData = {
-  "1기": [],
-  "2기": [
-    { 
-      name: "류지예", 
-      content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
+export default function Interview() {
+  const [selectedProject, setSelectedProject] = useState("4기");
+  const [selectedDetail, setSelectedDetail] = useState(null);
+  const interviewData = {
+    "1기": [],
+    "2기": [
+      { 
+        name: "류지예", 
+        content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
 
     코너에서는 개발자로 성장하기 위한 다양한 활동들을 해본 것 같습니다. 그중 가장 기억에 남는 활동은 코코넛들과 함께한 "정규 프로젝트"가 아닐까 싶습니다. 이전에 배웠던 깃허브 특강, 스터디, 코너톤 등의 코너의 모든 활동이 하나로 집약되어 폭발적인 성장을 이룰 수 있었던 소중한 활동이었습니다.
 
@@ -69,9 +39,10 @@ const interviewData = {
 
  여러분도 코너에서 적극적으로 활동한다면, 훌륭한 개발자로 성장할 수 있을 것입니다. 미래의 코코넛 여러분들! 여러분들의 열정과 도전으로 코너에서 성장하여 또 하나의 멋진 대왕 코코넛이 되시길 바랍니다.
  ` 
-    },
-    { name: "박유정", 
-      content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
+      },
+      { 
+        name: "박유정", 
+        content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
 
     약 한 학기 동안 진행하는 스터디 활동에서 배운 스택을 바로 프로젝트에 적용하며, 아이디어를 구현하는 코너톤이 가장 기억에 남습니다. 책으로 배운 내용을 팀 프로젝트로 쌓아가며 내 것으로 만드는 경험을 할 수 있었습니다. 또 짧은 개발 기한 내에 구현할 수 있는 재미있는 아이디어를 도출하는 경험은 이후의 프로젝트 기획 구성을 연습할 수 있는 기회라고 생각합니다.
 
@@ -83,11 +54,12 @@ const interviewData = {
 
  저는 어느 집단의 임원진으로 활동한 경험이 없었는데, 코너 운영진으로 활동하며 행사 기획, 공지 작성, 회의 진행 등의 업무를 수행하며 책임을 키우고 업무를 많이 배웠습니다. 여러분도 한 번쯤은 운영진으로 활동해보시길 추천드립니다. 꼭 운영진이 아니더라도 소모임 활동에 열심히 참여하셔서 이것저것 많이 얻어가셨으면 좋겠어요. 
  `  
-  },
-  ],
-  "3기": [
-    { name: "정지민", 
-      content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
+      }
+    ],
+    "3기": [
+      { 
+        name: "정지민", 
+        content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
 
     코너 활동 중 가장 인상 깊었던 활동은 약 7개월간 진행했던 정규 프로젝트입니다. 이는 제가 처음으로 긴 시간 동안 팀원들과 역할을 나누며 협업한 경험이었고, 한이음 프로젝트에 참여하면서 WBS, 요구사항 정의서, 수행 계획서 등 다양한 문서를 직접 작성해볼 기회를 가졌기 때문입니다. 수업에서는 이론으로만 배웠던 내용들을 실제로 적용하면서 많은 도움을 얻을 수 있었습니다.
 특히 프로젝트를 진행하며 전체적인 흐름이 어떻게 이루어지는지 직접 경험했고, 프론트엔드와 백엔드의 역할을 나누어 각자의 범위를 적절히 분배하는 방법을 배우게 되었습니다. 더불어 앱의 기획 단계부터 배포까지 진행하면서 기존에 몰랐던 기술들, 수업에서 다루지 않았던 다양한 기술들을 시도해볼 수 있었던 점이 좋았습니다.
@@ -104,9 +76,10 @@ const interviewData = {
 지나치게 소심하거나 조심스럽게 행동하면 좋은 기회를 놓칠 수도 있습니다. 관심 있는 스터디에 참여해 열심히 배우고, 카드뉴스 활동 때는 평소에 흥미로웠던 주제를 선택해 제작해보며, 정규 프로젝트에서는 팀원들과 최선을 다해 프로젝트를 완성해보세요. 이런 경험들이 쌓여 동아리에서의 시간을 더 뜻깊게 만들어줄 것입니다.
 또한, 짝선짝후, 워크숍, 엠티 같은 네트워킹 활동을 통해 많은 사람들과 가까워지는 시간도 가지셨으면 좋겠습니다. 동아리에서 보내는 1년, 혹은 그 이상의 시간이 값지고 의미 있게 기억될 수 있길 바랍니다.
  ` 
-  },
-    { name: "김은서", 
-      content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
+      },
+      { 
+        name: "김은서", 
+        content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
 
     가장 인상 깊었던 프로젝트는 정규 프로젝트였습니다. 처음으로 공모전에 참여했던 경험이라 부족한 점도 많았지만, 1년이라는 긴 시간 동안 팀원들과 함께 성장할 수 있었던 뜻깊은 경험이었습니다. 특히 코코넛 선배님들께서 많은 도움을 주셨고, 팀원들 또한 열정적으로 프로젝트에 참여해 주셔서 더욱 의미 있는 시간이 되었습니다. 개발에 대해 더 공부하고 싶다는 마음이 들게 해준 뜻깊은 프로젝트였습니다.
 
@@ -117,64 +90,43 @@ const interviewData = {
   코너의 가장 큰 강점은 교내 IT과 학생들과 친해질 수 있다는 점입니다. 함께 프로젝트를 진행하며 협업의 즐거움을 경험할 수 있었고, 워크숍과 같은 다양한 행사에서 많은 코코넛들과 교류하며 네트워크를 확장할 수 있었습니다. 이를 통해 서로의 경험을 공유하고, 다양한 시각을 배울 수 있었습니다.
 
 또한, IT 주제를 정해 조사하고 발표 자료를 제작하거나 카드 뉴스를 만드는 활동을 통해 IT 트렌드에 대한 이해를 넓힐 수 있었습니다. 단순히 개인적인 공부에 그치는 것이 아니라, 팀원들과 함께 최신 기술이나 트렌드에 대해 논의하고 고민하는 과정이 혼자 하는 것보다 더 재미있었고, 큰 도움이 되었습니다. 
-  
- 
+   
  Q3.  미래의 코코넛들에게 전하고 싶은 말이나 조언이 있다면?
 
  코너는 주어진 활동을 수동적으로 따라가는 곳이 아니라, 적극적으로 배우고 경험하는 곳이라고 생각합니다. 프로젝트, 스터디, 해커톤 등 다양한 활동이 준비되어 있기 때문에, 다른 코코넛들과 성장해 나가셨으면 좋겠습니다!
  ` 
-    
-    },
-  ],
-  "4기": [
-    { name: "장인영", 
-      content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
+      }
+    ],
+    "4기": [
+      { 
+        name: "장인영", 
+        content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
 
     아직 코코넛으로 활동한 기간이 짧아 다양한 활동을 경험해보지는 못했지만, 스터디가 가장 인상 깊었습니다. 혼자서 공부하고 끝내는 것이 아니라 동아리 블로그에내용을 정리하고, 팀별로 발표도 진행하면서 내용을 더 깊이 이해할 수 있었습니다. 
-    
+     
   Q2.  코너만의 강점은 무엇이라고 생각하나요?
 
   코너는 스터디, 해커톤, 정규 프로젝트 등 다양한 활동이 있어 많은 것을 배워갈 수 있는 동아리라고 생각합니다. 또한, 다양한 네트워킹 이벤트가 있어 학술 동아리임에도 즐겁게 참여할 수 있다는 점이 코너의 강점이라고 생각합니다.
-스터디 내용과 카드뉴스를 학과 게시판과 블로그에 업로드하여 학습 내용을 다른 학우들과 함께 공유하는 점도 다른 동아리와 차별화되는 점이라고 생각합니다. 마지막으로, 코너에는 귀여운 마스코트와 다양한 굿즈도 있습니다!
+스터디 내용과 카드뉴스를 학과 게시판과 블로그에 업로드하여 학습 내용을 다른 동아리와 차별화되는 점이라고 생각합니다. 마지막으로, 코너에는 귀여운 마스코트와 다양한 굿즈도 있습니다!
   
- 
  Q3.  미래의 코코넛들에게 전하고 싶은 말이나 조언이 있다면?
 
  코너 활동에 열심히 참여하신다면 많은 것을 배워갈 수 있을 것이라고 생각합니다. 다양한 네트워킹 프로그램에도 참여하시면서 즐겁게 활동하셨으면 좋겠습니다. 미래의 코코넛분들 화이팅!☺️
  ` 
-    
-    }
-    
-  ],
-};
-
-export default function Interview() {
-  const [selectedGen, setSelectedGen] = useState("4기");
-  
-  const handleGenClick = (gen) => {
-    setSelectedGen(gen);
+      }
+    ]
   };
 
   return (
-    <div className="interview-container">
-      <Title title="코너 인터뷰" subtitle={`${selectedGen} 인터뷰`} color="blue" />
-      <div className="content">
-        {/* 좌측 기수 목록 */}
-        <div className="generation-list">
-          <GenerationList onGenClick={setSelectedGen} />
-        </div>
-        
-        {/* 인터뷰 내용 표시 */}
-        <div className="interview-content">
-          {interviewData[selectedGen]?.map((person, index) => (
-            <div key={index} className="interview-item">
-              <h3>{person.name}</h3>
-              <pre>{person.content}</pre>
-            </div>
-          ))}
-        </div>
-      </div>
-      
+    <div>
+      <Title title="코너 인터뷰" subtitle={`${selectedProject} 인터뷰`} color="blue" />
+      <ProjectList
+        selectedProject={selectedProject}
+        setSelectedProject={setSelectedProject}
+        selectedDetail={selectedDetail}
+        setSelectedDetail={setSelectedDetail}
+        interviewData={interviewData} // ⬅ 전달
+      />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
-import * as I from "./projectNumber.style";
+import * as P from "./ProjectNumber.style";
+import * as A from "../../../styles/GalleryStyle";
 
 export default function ProjectNumber({ selectedProject, setSelectedProject }) {
   const handleClick = (number) => {
@@ -7,16 +8,27 @@ export default function ProjectNumber({ selectedProject, setSelectedProject }) {
   };
 
   return (
-    <I.ProjectNumberContainer>
+    <A.SideBar>
       {["4기", "3기", "2기", "1기"].map((item) => (
-        <I.ProjectNumberItem
+        <A.Now
           key={item}
           isSelected={selectedProject === item}
           onClick={() => handleClick(item)}
+          isactive={selectedProject === item}
         >
-          {item}
-        </I.ProjectNumberItem>
+          <A.Num>{item}</A.Num>
+        </A.Now>
       ))}
-    </I.ProjectNumberContainer>
+    </A.SideBar>
   );
+}
+
+{
+  /* <A.SideBar>
+  {["4기", "3기", "2기", "1기"].map((item) => (
+    <A.Now key={item} onClick={() => handleNum(item)} isactive={selectedNumber === item} as="div">
+      <A.Num>{item}</A.Num>
+    </A.Now>
+  ))}
+</A.SideBar>; */
 }
