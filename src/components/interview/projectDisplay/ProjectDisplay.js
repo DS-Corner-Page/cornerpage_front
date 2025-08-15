@@ -5,9 +5,7 @@ export default function ProjectDisplay({ selectedBatch, interviewData }) {
 
   return (
     <P.ProjectDisplayContainer>
-      {list.length === 0 && (
-        <P.Empty>아직 등록된 인터뷰가 없습니다.</P.Empty>
-      )}
+      {list.length === 0 && <P.Empty>인터뷰가 없습니다.</P.Empty>}
 
       <P.Grid>
         {list.map((item, idx) => {
@@ -21,7 +19,10 @@ export default function ProjectDisplay({ selectedBatch, interviewData }) {
               <P.Name>{item.name}</P.Name>
               {paragraphs.map((p, i) =>
                 /^Q\d+\./.test(p) ? (
-                  <P.Question key={i}>{p}</P.Question>
+                  // 전체 문장은 title로 툴팁 제공, 모바일은 한 줄 + … 처리
+                  <P.Question key={i} title={p}>
+                    {p}
+                  </P.Question>
                 ) : (
                   <P.Answer key={i}>{p}</P.Answer>
                 )
@@ -33,5 +34,3 @@ export default function ProjectDisplay({ selectedBatch, interviewData }) {
     </P.ProjectDisplayContainer>
   );
 }
-
-
