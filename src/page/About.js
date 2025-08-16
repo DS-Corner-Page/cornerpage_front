@@ -23,7 +23,7 @@ export default function About() {
       <Title 
         title="코딩은 너로부터" 
         subtitle="덕성여자대학교 IT 소모임<br/>Corner" 
-        color="red" 
+        color="#FF8573" 
       />
       <S.ContentContainer>
         <S.Section>

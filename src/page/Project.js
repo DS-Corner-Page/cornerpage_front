@@ -11,7 +11,7 @@ export default function Project() {
       <Title
         title="코너 프로젝트"
         subtitle={`${selectedProject} 프로젝트`}
-        color="blue"
+        color="#9c84ccff"
       />
       <ProjectList
         selectedProject={selectedProject}

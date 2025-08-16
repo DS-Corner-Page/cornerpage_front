@@ -28,7 +28,7 @@ export default function Gallery() {
 
   return (
     <>
-      <Title title="코너 갤러리" subtitle={`${selectedNumber} 갤러리`} color="blue" />
+      <Title title="코너 갤러리" subtitle={`${selectedNumber} 갤러리`} color="#73a82fff" />
       <A.Gallery>
         <A.SideBar>
           {["4기", "3기", "2기", "1기"].map((item) => (
