@@ -69,6 +69,8 @@
 
 
 
+
+// 스크롤 반영 + 수정
 import styled from "styled-components";
 
 
@@ -96,6 +98,39 @@ export const Grid = styled.div`
   }
 `;
 
+// export const Card = styled.div`
+//   background: #fff;
+//   border: 1px solid #e5e7eb;
+//   border-radius: 12px;
+//   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+
+//   display: flex;
+//   flex-direction: column;
+//   overflow: hidden;
+//   box-sizing: border-box;
+//   padding: 20px 22px;
+
+
+//   @media (min-width: 1024px) {
+//     height: 42vh;     
+//     max-height: 560px;
+//   }
+
+//   @media (min-width: 768px) and (max-width: 1023px) {
+//     height: 45vh;
+//     max-height: 560px;
+//     padding: 18px 16px;
+//   }
+
+//   @media (max-width: 767px) {
+//     height: 48vh;     
+//     height: 48svh;   
+//     max-height: none;
+//     padding: 16px 14px;
+//   }
+// `;
+
+// 수정 코드
 export const Card = styled.div`
   background: #fff;
   border: 1px solid #e5e7eb;
@@ -108,25 +143,18 @@ export const Card = styled.div`
   box-sizing: border-box;
   padding: 20px 22px;
 
-
   @media (min-width: 1024px) {
-    height: 42vh;     
+    height: 42vh;
     max-height: 560px;
   }
 
-  @media (min-width: 768px) and (max-width: 1023px) {
-    height: 45vh;
-    max-height: 560px;
+  @media (max-width: 1023px) {
+    height: calc(var(--vh-fixed, 1vh) * 48);
+    max-height: none;
     padding: 18px 16px;
   }
-
-  @media (max-width: 767px) {
-    height: 48vh;     
-    height: 48svh;   
-    max-height: none;
-    padding: 16px 14px;
-  }
 `;
+
 
 export const CardHeader = styled.div`
   padding-bottom: 8px;
@@ -203,4 +231,29 @@ export const Answer = styled.p`
 export const Empty = styled.div`
   color: #6b7280;
   margin-top: 8px;
+`;
+
+
+//추가
+export const TabButton = styled.button`
+  width: 100%;
+  display: block;
+  text-align: left;
+  padding: 12px 14px;
+  border: 0;
+  background: ${({ $active }) => ($active ? "#eef2ff" : "transparent")};
+  color: ${({ $active }) => ($active ? "#1d4ed8" : "#374151")};
+  font-weight: ${({ $active }) => ($active ? 700 : 500)};
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background: ${({ $active }) => ($active ? "#e0e7ff" : "#f3f4f6")};
+  }
+
+  /* 키보드 포커스 접근성 */
+  &:focus-visible {
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.45);
+  }
 `;
