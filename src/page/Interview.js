@@ -1,15 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Title from "../components/title/title/Title";
 import ProjectList from "../components/interview/projectList/ProjectList";
 
 export default function Interview() {
   const [selectedProject, setSelectedProject] = useState("4기");
   const [selectedDetail, setSelectedDetail] = useState(null);
+
+  useEffect(() => {
+    const setFixedVh = () => {
+      const vh = document.documentElement.clientHeight * 0.01;
+      document.documentElement.style.setProperty("--vh-fixed", `${vh}px`);
+    };
+
+    setFixedVh();
+
+    const onOrientation = () => setTimeout(setFixedVh, 250);
+    window.addEventListener("orientationchange", onOrientation);
+
+    return () => {
+      window.removeEventListener("orientationchange", onOrientation);
+    };
+  }, []);
+
   const interviewData = {
     "1기": [],
     "2기": [
-      { 
-        name: "류지예", 
+      {
+        name: "다라",
         content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
 
     코너에서는 개발자로 성장하기 위한 다양한 활동들을 해본 것 같습니다. 그중 가장 기억에 남는 활동은 코코넛들과 함께한 "정규 프로젝트"가 아닐까 싶습니다. 이전에 배웠던 깃허브 특강, 스터디, 코너톤 등의 코너의 모든 활동이 하나로 집약되어 폭발적인 성장을 이룰 수 있었던 소중한 활동이었습니다.
@@ -41,7 +58,7 @@ export default function Interview() {
  ` 
       },
       { 
-        name: "박유정", 
+        name: "동동", 
         content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
 
     약 한 학기 동안 진행하는 스터디 활동에서 배운 스택을 바로 프로젝트에 적용하며, 아이디어를 구현하는 코너톤이 가장 기억에 남습니다. 책으로 배운 내용을 팀 프로젝트로 쌓아가며 내 것으로 만드는 경험을 할 수 있었습니다. 또 짧은 개발 기한 내에 구현할 수 있는 재미있는 아이디어를 도출하는 경험은 이후의 프로젝트 기획 구성을 연습할 수 있는 기회라고 생각합니다.
@@ -58,7 +75,7 @@ export default function Interview() {
     ],
     "3기": [
       { 
-        name: "정지민", 
+        name: "햇반", 
         content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
 
     코너 활동 중 가장 인상 깊었던 활동은 약 7개월간 진행했던 정규 프로젝트입니다. 이는 제가 처음으로 긴 시간 동안 팀원들과 역할을 나누며 협업한 경험이었고, 한이음 프로젝트에 참여하면서 WBS, 요구사항 정의서, 수행 계획서 등 다양한 문서를 직접 작성해볼 기회를 가졌기 때문입니다. 수업에서는 이론으로만 배웠던 내용들을 실제로 적용하면서 많은 도움을 얻을 수 있었습니다.
@@ -78,7 +95,7 @@ export default function Interview() {
  ` 
       },
       { 
-        name: "김은서", 
+        name: "노을", 
         content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
 
     가장 인상 깊었던 프로젝트는 정규 프로젝트였습니다. 처음으로 공모전에 참여했던 경험이라 부족한 점도 많았지만, 1년이라는 긴 시간 동안 팀원들과 함께 성장할 수 있었던 뜻깊은 경험이었습니다. 특히 코코넛 선배님들께서 많은 도움을 주셨고, 팀원들 또한 열정적으로 프로젝트에 참여해 주셔서 더욱 의미 있는 시간이 되었습니다. 개발에 대해 더 공부하고 싶다는 마음이 들게 해준 뜻깊은 프로젝트였습니다.
@@ -90,7 +107,7 @@ export default function Interview() {
   코너의 가장 큰 강점은 교내 IT과 학생들과 친해질 수 있다는 점입니다. 함께 프로젝트를 진행하며 협업의 즐거움을 경험할 수 있었고, 워크숍과 같은 다양한 행사에서 많은 코코넛들과 교류하며 네트워크를 확장할 수 있었습니다. 이를 통해 서로의 경험을 공유하고, 다양한 시각을 배울 수 있었습니다.
 
 또한, IT 주제를 정해 조사하고 발표 자료를 제작하거나 카드 뉴스를 만드는 활동을 통해 IT 트렌드에 대한 이해를 넓힐 수 있었습니다. 단순히 개인적인 공부에 그치는 것이 아니라, 팀원들과 함께 최신 기술이나 트렌드에 대해 논의하고 고민하는 과정이 혼자 하는 것보다 더 재미있었고, 큰 도움이 되었습니다. 
-   
+    
  Q3.  미래의 코코넛들에게 전하고 싶은 말이나 조언이 있다면?
 
  코너는 주어진 활동을 수동적으로 따라가는 곳이 아니라, 적극적으로 배우고 경험하는 곳이라고 생각합니다. 프로젝트, 스터디, 해커톤 등 다양한 활동이 준비되어 있기 때문에, 다른 코코넛들과 성장해 나가셨으면 좋겠습니다!
@@ -99,7 +116,7 @@ export default function Interview() {
     ],
     "4기": [
       { 
-        name: "장인영", 
+        name: "스누피", 
         content: `Q1.  코너 활동 중 가장 인상 깊었던 활동은 무엇이었나요?
 
     아직 코코넛으로 활동한 기간이 짧아 다양한 활동을 경험해보지는 못했지만, 스터디가 가장 인상 깊었습니다. 혼자서 공부하고 끝내는 것이 아니라 동아리 블로그에내용을 정리하고, 팀별로 발표도 진행하면서 내용을 더 깊이 이해할 수 있었습니다. 
@@ -119,13 +136,13 @@ export default function Interview() {
 
   return (
     <div>
-      <Title title="코너 인터뷰" subtitle={`${selectedProject} 인터뷰`} color="blue" />
+      <Title title="코너 인터뷰" subtitle={`${selectedProject} 인터뷰`} color="#499FDD" />
       <ProjectList
         selectedProject={selectedProject}
         setSelectedProject={setSelectedProject}
         selectedDetail={selectedDetail}
         setSelectedDetail={setSelectedDetail}
-        interviewData={interviewData} // ⬅ 전달
+        interviewData={interviewData}
       />
     </div>
   );
