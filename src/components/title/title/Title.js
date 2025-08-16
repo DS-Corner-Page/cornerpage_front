@@ -67,12 +67,12 @@ export default function Title({ title, subtitle, color }) {
     <T.TitleContainer>
       <T.TopContainer scrollPosition={scrollPosition}>
         <T.Title>{title}</T.Title>
-        <GradientBar color={color === "blue" ? "#499FDD" : "#FF8573"} />
+        <GradientBar color={color} />
       </T.TopContainer>
 
       <T.BottomContainer scrollPosition={scrollPosition}>
         <GradientBar
-          color={color === "blue" ? "#499FDD" : "#FF8573"}
+          color={color}
           reverse="true"
         />
         <T.Title>

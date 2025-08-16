@@ -276,7 +276,7 @@ export default function Interview() {
 
   return (
     <div>
-      <Title title="코너 인터뷰" subtitle={`${selectedProject} 인터뷰`} color="blue" />
+      <Title title="코너 인터뷰" subtitle={`${selectedProject} 인터뷰`} color="#499FDD" />
       <ProjectList
         selectedProject={selectedProject}
         setSelectedProject={setSelectedProject}
