@@ -8,9 +8,9 @@ export default function Footer() {
       <S.Section>
         <S.H1>Corner</S.H1>
         <S.H5>덕성여자대학교 IT 소모임 코너</S.H5>
-        <S.H5>kimes0403@gmail.com</S.H5>
+        <S.H5>dswucorner@gmail.com</S.H5>
         <br />
-        <S.H5>김은경 김은서 심수빈 정서영</S.H5>
+        <S.H5>은키 노을 루나 크롱</S.H5>
       </S.Section>
       <S.Section2>
         <S.H3>We'll Be Glad To Help</S.H3>
