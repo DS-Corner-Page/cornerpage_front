@@ -68,12 +68,13 @@
 // `;
 
 
+
 import styled from "styled-components";
+
 
 export const ProjectDisplayContainer = styled.div`
   flex: 1;
   align-self: flex-start;
-
   padding-left: 24px;
   padding-right: 24px;
 
@@ -105,31 +106,27 @@ export const Card = styled.div`
   flex-direction: column;
   overflow: hidden;
   box-sizing: border-box;
-
-
   padding: 20px 22px;
 
 
   @media (min-width: 1024px) {
-    height: 42dvh;                    
-    max-height: 560px;                 
+    height: 42vh;     
+    max-height: 560px;
   }
 
-
   @media (min-width: 768px) and (max-width: 1023px) {
-    height: 45dvh;
+    height: 45vh;
     max-height: 560px;
     padding: 18px 16px;
   }
 
-
   @media (max-width: 767px) {
-    height: 48dvh;                     
-    max-height: none;                
+    height: 48vh;     
+    height: 48svh;   
+    max-height: none;
     padding: 16px 14px;
   }
 `;
-
 
 export const CardHeader = styled.div`
   padding-bottom: 8px;
@@ -139,7 +136,6 @@ export const CardHeader = styled.div`
     padding-bottom: 6px;
   }
 `;
-
 
 export const Name = styled.h3`
   margin: 0;
@@ -157,6 +153,8 @@ export const ScrollBody = styled.div`
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding-top: 10px;
+  overscroll-behavior: contain;
+
 
   scrollbar-width: thin;
   scrollbar-color: #c9d2e0 transparent;
@@ -171,11 +169,12 @@ export const ScrollBody = styled.div`
 export const Question = styled.p`
   margin: 12px 0 6px;
   font-weight: 700;
+  font-size: 16px;        
   line-height: 1.75;
   white-space: pre-wrap;
 
   @media (max-width: 768px) {
-    font-size: clamp(14px, 3.6vw, 18px);
+    font-size: clamp(14px, 3.6vw, 18px);  
     white-space: normal !important;
     word-break: keep-all;
     line-height: 1.6;
@@ -191,12 +190,13 @@ export const Question = styled.p`
 export const Answer = styled.p`
   margin: 0 0 8px;
   color: #111827;
+  font-size: 16px;        
   white-space: pre-wrap;
   line-height: 1.8;
 
   @media (max-width: 768px) {
+    font-size: clamp(14px, 3.6vw, 18px); 
     line-height: 1.75;
-    font-size: 15px;
   }
 `;
 
