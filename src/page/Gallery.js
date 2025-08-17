@@ -50,9 +50,8 @@ export default function Gallery() {
       {selectedImage && (
         <A.ModalOverlay onClick={() => setSelectedImage(null)}>
           <A.ModalContent onClick={(e) => e.stopPropagation()}>
-            {" "}
             {/* 모달 내부 클릭 시 닫히지 않도록 */}
-            <A.ModalImage src={selectedImage.src} alt={selectedImage.alt} />
+            <A.ModalImage src={selectedImage.src} alt={selectedImage.alt} style={{ height: "50vh" }} />
           </A.ModalContent>
         </A.ModalOverlay>
       )}
